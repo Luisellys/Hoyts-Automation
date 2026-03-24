@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-23T19:12:50 VET" name="Default suite" finished-at="2026-03-23T19:13:10 VET" duration-ms="19997">
+    <groups>
+    </groups>
+    <test started-at="2026-03-23T19:12:50 VET" name="Default test" finished-at="2026-03-23T19:13:10 VET" duration-ms="19997">
+      <class name="QA_Assessment.hoyts_qa_test.searchMovie">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@557caf28]" started-at="2026-03-23T19:12:50 VET" name="launchApplication" finished-at="2026-03-23T19:12:56 VET" duration-ms="6050" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="searchInvalidMovieTest()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@557caf28]" started-at="2026-03-23T19:12:56 VET" name="searchInvalidMovieTest" finished-at="2026-03-23T19:13:00 VET" duration-ms="4598" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchInvalidMovieTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@557caf28]" started-at="2026-03-23T19:13:00 VET" name="tearDown" finished-at="2026-03-23T19:13:01 VET" duration-ms="362" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@557caf28]" started-at="2026-03-23T19:13:01 VET" name="launchApplication" finished-at="2026-03-23T19:13:02 VET" duration-ms="1617" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="searchValidMovieTest()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@557caf28]" started-at="2026-03-23T19:13:02 VET" name="searchValidMovieTest" finished-at="2026-03-23T19:13:09 VET" duration-ms="7062" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchValidMovieTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@557caf28]" started-at="2026-03-23T19:13:09 VET" name="tearDown" finished-at="2026-03-23T19:13:10 VET" duration-ms="261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- QA_Assessment.hoyts_qa_test.searchMovie -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
