@@ -29,7 +29,7 @@ cd 3-automation
 ### Invalid Movie Search
 - Search random string
 - Validate "Sorry, we couldn't find any results" message appears
-- 
+  
 ## Framework Design Decisions
 
 - **TestNG** for test structure and execution
