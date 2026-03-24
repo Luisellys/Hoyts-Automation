@@ -20,6 +20,7 @@ Download: https://www.google.com/chrome/
 Clone the repository:
 git clone https://github.com/Luisellys/ecoPortal-QA-Assessment.git
 cd 3-automation
+Import to Eclipse: from Eclipse --> File --> Import --> General --> Existing Projects into Workspace --> Next --> Select root directory --> Browse --> Browse your project --> Select Folder --> Select project --> Finish.
 
 ## Test Scenarios Covered
 
