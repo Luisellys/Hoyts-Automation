@@ -16,14 +16,16 @@ After installing Java:
 2. Search: "Environment Variables"
 3. Click: "Edit the system environment variables"
 4. Click "Environment Variables"
-- **Add JAVA_HOME**
-1. Click New under System variables
-- Variable name: JAVA_HOME
-- Variable value: (example path) C:\Program Files\Java\jdk-11
-- **Update Path**
-1. Find and select Path → Click Edit
-2. Click New and add: %JAVA_HOME%\bin
-3. Click OK on all windows
+5. Click "New" under System variables
+6. Add "Variable name": JAVA_HOME
+7. Add "Variable value": (example path) C:\Program Files\Java\jdk-11
+8. Click "OK"
+9. Click "New" under User variables
+10. Find and select "Path"
+11. Click "Edit"
+12. Click "New"
+13. Add: %JAVA_HOME%\bin
+14. Click OK on all windows
 
 - **Verify Java Installation**
 Open Command Prompt:
