@@ -7,8 +7,6 @@ https://www.hoyts.co.nz/
 Install the following tools:
 ### 1. Java JDK (11 or higher)
 Download: https://www.oracle.com/java/technologies/downloads/
-Verify:
-java -version
 
 - **Set Environment Variables (Windows)**
 After installing Java:
@@ -33,7 +31,7 @@ Open Command Prompt:
 2. Type: cmd
 3. Press Enter
 4. Run: java -version
-You should see something like: java version "11.x.x"
+- You should see something like: java version "11.x.x"
 
 ### 2. Eclipse
 Download: https://www.eclipse.org/downloads/
