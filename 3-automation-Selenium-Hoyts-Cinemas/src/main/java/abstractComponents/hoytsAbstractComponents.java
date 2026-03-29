@@ -38,14 +38,14 @@ public class hoytsAbstractComponents {
     // ================= VIEW DETECTION =================
 
     public boolean isMobileView() {
-        try {
-        	Thread.sleep(1500);
-            return driver.findElement(hamburgerMenu).isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
-    }
+        int viewportWidth = ((Long)((JavascriptExecutor)driver)
+                                .executeScript("return window.innerWidth;"))
+                                .intValue();
 
+        System.out.println("Viewport width: " + viewportWidth);
+
+        return viewportWidth <= 1240;
+    }
     // ================= SEARCH =================
     public void searchMovie(String movieName) {
 

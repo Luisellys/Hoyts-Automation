@@ -3,9 +3,9 @@ package QA_Assessment.hoyts_qa_test;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import testComponents.baseTest;
+import testComponents.hoytsCinemaBaseTest;
 
-public class searchMovie extends baseTest {
+public class searchMovie extends hoytsCinemaBaseTest {
 
     @Test
     public void searchValidMovieTest() {

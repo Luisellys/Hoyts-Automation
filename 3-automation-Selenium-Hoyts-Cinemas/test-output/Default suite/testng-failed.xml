@@ -6,8 +6,8 @@
       <class name="QA_Assessment.hoyts_qa_test.searchMovie">
         <methods>
           <include name="searchInvalidMovieTest"/>
-          <include name="launchApplication"/>
           <include name="tearDown"/>
+          <include name="launchApplication"/>
         </methods>
       </class> <!-- QA_Assessment.hoyts_qa_test.searchMovie -->
     </classes>

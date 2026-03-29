@@ -38,20 +38,20 @@ public class hoytsShopAbstractComponents {
     // ================= VIEW DETECTION =================
 
     public boolean isMobileView() {
-        try {
-        	Thread.sleep(1500);
-            return driver.findElement(hamburgerMenu).isDisplayed();
-        } catch (Exception e) {
-            return false;
-        } 
+        int viewportWidth = ((Long)((JavascriptExecutor)driver)
+                                .executeScript("return window.innerWidth;"))
+                                .intValue();
+
+        System.out.println("Viewport width: " + viewportWidth);
+
+        return viewportWidth <= 1278;
     }
-    
     // ================= GO TO GIFTCARDS PAGE =================
     public giftCardsPage goToGiftCards() {
     	Boolean isMobile = isMobileView();
     	if(isMobile) {
     		try {
-    			waitForElementToAppear(hamburgerMenu);
+    			waitForElementToBeClickable(hamburgerMenu);
     			driver.findElement(hamburgerMenu).click();
     	    	waitForElementToBeVisible(openedMenu);
     		}
