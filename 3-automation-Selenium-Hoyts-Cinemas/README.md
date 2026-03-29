@@ -85,4 +85,4 @@ cd 3-automation-Selenium-Hoyts-Cinemas
 3. Install TestNG
 4. Install Chrome
 5. Clone repository
-6. Run: right-click "testng.xml" --> Run as --> 1 TestNG Suite
+6. Run on Eclipse: right-click "testng.xml" --> Run as --> 1 TestNG Suite
