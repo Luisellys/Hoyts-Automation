@@ -18,7 +18,7 @@ public class hoytsAbstractComponents {
 
     // ================= LOCATORS =================
 
-    By hamburgerMenu = By.cssSelector("button[aria-label='Menu']");
+    By hamburgerMenu = By.cssSelector(".header__hamburger-icon");
     By openedMenu = By.id("dash__nav");
 
     // MOBILE
@@ -39,6 +39,7 @@ public class hoytsAbstractComponents {
 
     public boolean isMobileView() {
         try {
+        	Thread.sleep(1500);
             return driver.findElement(hamburgerMenu).isDisplayed();
         } catch (Exception e) {
             return false;
@@ -53,7 +54,6 @@ public class hoytsAbstractComponents {
 
         if (isMobile) {
             System.out.println("Using MOBILE search");
-            waitForElementToAppear(hamburgerMenu);
             // Open hamburger menu every time
             try {
                 driver.findElement(hamburgerMenu).click();

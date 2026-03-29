@@ -13,13 +13,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import hoytsPageObjects.mainPage;
+import hoytsPageObjects.hoytsCinemaMainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class baseTest {
 
     public WebDriver driver;
-    public mainPage mainPage;
+    public hoytsCinemaMainPage mainPage;
     public Properties prop;
 
     public WebDriver initializedDriver() throws IOException {
@@ -50,10 +50,10 @@ public class baseTest {
     }
 
     @BeforeMethod
-    public mainPage launchApplication() throws IOException {
+    public hoytsCinemaMainPage launchApplication() throws IOException {
         driver = initializedDriver();
         driver.manage().deleteAllCookies();
-        mainPage = new mainPage(driver);
+        mainPage = new hoytsCinemaMainPage(driver);
         mainPage.goTo();
         return mainPage;
     }

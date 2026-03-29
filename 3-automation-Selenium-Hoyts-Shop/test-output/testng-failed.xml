@@ -5,7 +5,7 @@
     <classes>
       <class name="QA_Assessment.hoyts_qa_test.giftCard">
         <methods>
-          <include name="pickFromGiftCardsPage"/>
+          <include name="pickMostPopularGiftCardFromMainPage"/>
           <include name="launchApplication"/>
           <include name="tearDown"/>
         </methods>

@@ -3,7 +3,7 @@ package QA_Assessment.hoyts_qa_test;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import hoytsPageObjects.giftCardsPage;
+import hoytsShopPageObjects.giftCardsPage;
 import testComponents.baseTest;
 
 public class giftCard extends baseTest {

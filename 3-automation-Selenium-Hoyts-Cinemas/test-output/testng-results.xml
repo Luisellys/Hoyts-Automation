@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-23T19:12:50 VET" name="Default suite" finished-at="2026-03-23T19:13:10 VET" duration-ms="19997">
+  <suite started-at="2026-03-29T12:17:10 VET" name="Default suite" finished-at="2026-03-29T12:17:29 VET" duration-ms="19139">
     <groups>
     </groups>
-    <test started-at="2026-03-23T19:12:50 VET" name="Default test" finished-at="2026-03-23T19:13:10 VET" duration-ms="19997">
+    <test started-at="2026-03-29T12:17:10 VET" name="Default test" finished-at="2026-03-29T12:17:29 VET" duration-ms="19139">
       <class name="QA_Assessment.hoyts_qa_test.searchMovie">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@557caf28]" started-at="2026-03-23T19:12:50 VET" name="launchApplication" finished-at="2026-03-23T19:12:56 VET" duration-ms="6050" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@776aec5c]" started-at="2026-03-29T12:17:10 VET" name="launchApplication" finished-at="2026-03-29T12:17:12 VET" duration-ms="2432" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="searchInvalidMovieTest()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@557caf28]" started-at="2026-03-23T19:12:56 VET" name="searchInvalidMovieTest" finished-at="2026-03-23T19:13:00 VET" duration-ms="4598" status="PASS">
+        <test-method signature="searchInvalidMovieTest()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@776aec5c]" started-at="2026-03-29T12:17:12 VET" name="searchInvalidMovieTest" finished-at="2026-03-29T12:17:20 VET" duration-ms="7312" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchInvalidMovieTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@557caf28]" started-at="2026-03-23T19:13:00 VET" name="tearDown" finished-at="2026-03-23T19:13:01 VET" duration-ms="362" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@776aec5c]" started-at="2026-03-29T12:17:20 VET" name="tearDown" finished-at="2026-03-29T12:17:20 VET" duration-ms="239" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@557caf28]" started-at="2026-03-23T19:13:01 VET" name="launchApplication" finished-at="2026-03-23T19:13:02 VET" duration-ms="1617" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@776aec5c]" started-at="2026-03-29T12:17:20 VET" name="launchApplication" finished-at="2026-03-29T12:17:22 VET" duration-ms="1506" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="searchValidMovieTest()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@557caf28]" started-at="2026-03-23T19:13:02 VET" name="searchValidMovieTest" finished-at="2026-03-23T19:13:09 VET" duration-ms="7062" status="PASS">
+        <test-method signature="searchValidMovieTest()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@776aec5c]" started-at="2026-03-29T12:17:22 VET" name="searchValidMovieTest" finished-at="2026-03-29T12:17:29 VET" duration-ms="7338" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchValidMovieTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@557caf28]" started-at="2026-03-23T19:13:09 VET" name="tearDown" finished-at="2026-03-23T19:13:10 VET" duration-ms="261" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:QA_Assessment.hoyts_qa_test.searchMovie@776aec5c]" started-at="2026-03-29T12:17:29 VET" name="tearDown" finished-at="2026-03-29T12:17:29 VET" duration-ms="263" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-28T16:49:18 VET" name="Default suite" finished-at="2026-03-28T16:49:57 VET" duration-ms="38537">
+  <suite started-at="2026-03-29T12:19:21 VET" name="Default suite" finished-at="2026-03-29T12:19:43 VET" duration-ms="21768">
     <groups>
     </groups>
-    <test started-at="2026-03-28T16:49:18 VET" name="Default test" finished-at="2026-03-28T16:49:57 VET" duration-ms="38537">
+    <test started-at="2026-03-29T12:19:21 VET" name="Default test" finished-at="2026-03-29T12:19:43 VET" duration-ms="21768">
       <class name="QA_Assessment.hoyts_qa_test.giftCard">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:QA_Assessment.hoyts_qa_test.giftCard@557caf28]" started-at="2026-03-28T16:49:18 VET" name="launchApplication" finished-at="2026-03-28T16:49:21 VET" duration-ms="3143" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:QA_Assessment.hoyts_qa_test.giftCard@776aec5c]" started-at="2026-03-29T12:19:21 VET" name="launchApplication" finished-at="2026-03-29T12:19:23 VET" duration-ms="2063" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="pickFromGiftCardsPage()[pri:0, instance:QA_Assessment.hoyts_qa_test.giftCard@557caf28]" started-at="2026-03-28T16:49:21 VET" name="pickFromGiftCardsPage" finished-at="2026-03-28T16:49:39 VET" duration-ms="17587" status="PASS">
+        <test-method signature="pickFromGiftCardsPage()[pri:0, instance:QA_Assessment.hoyts_qa_test.giftCard@776aec5c]" started-at="2026-03-29T12:19:23 VET" name="pickFromGiftCardsPage" finished-at="2026-03-29T12:19:33 VET" duration-ms="10180" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pickFromGiftCardsPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:QA_Assessment.hoyts_qa_test.giftCard@557caf28]" started-at="2026-03-28T16:49:39 VET" name="tearDown" finished-at="2026-03-28T16:49:39 VET" duration-ms="327" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:QA_Assessment.hoyts_qa_test.giftCard@776aec5c]" started-at="2026-03-29T12:19:33 VET" name="tearDown" finished-at="2026-03-29T12:19:33 VET" duration-ms="378" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:QA_Assessment.hoyts_qa_test.giftCard@557caf28]" started-at="2026-03-28T16:49:39 VET" name="launchApplication" finished-at="2026-03-28T16:49:41 VET" duration-ms="1434" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:QA_Assessment.hoyts_qa_test.giftCard@776aec5c]" started-at="2026-03-29T12:19:33 VET" name="launchApplication" finished-at="2026-03-29T12:19:35 VET" duration-ms="1700" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="pickMostPopularGiftCard()[pri:0, instance:QA_Assessment.hoyts_qa_test.giftCard@557caf28]" started-at="2026-03-28T16:49:41 VET" name="pickMostPopularGiftCard" finished-at="2026-03-28T16:49:56 VET" duration-ms="15664" status="PASS">
+        <test-method signature="pickMostPopularGiftCardFromMainPage()[pri:0, instance:QA_Assessment.hoyts_qa_test.giftCard@776aec5c]" started-at="2026-03-29T12:19:35 VET" name="pickMostPopularGiftCardFromMainPage" finished-at="2026-03-29T12:19:42 VET" duration-ms="7063" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- pickMostPopularGiftCard -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:QA_Assessment.hoyts_qa_test.giftCard@557caf28]" started-at="2026-03-28T16:49:56 VET" name="tearDown" finished-at="2026-03-28T16:49:57 VET" duration-ms="337" status="PASS">
+        </test-method> <!-- pickMostPopularGiftCardFromMainPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:QA_Assessment.hoyts_qa_test.giftCard@776aec5c]" started-at="2026-03-29T12:19:42 VET" name="tearDown" finished-at="2026-03-29T12:19:43 VET" duration-ms="340" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

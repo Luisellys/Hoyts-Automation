@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.*;
 
-import hoytsPageObjects.giftCardsPage;
+import hoytsShopPageObjects.giftCardsPage;
 
 public class hoytsShopAbstractComponents {
 
@@ -29,7 +29,6 @@ public class hoytsShopAbstractComponents {
     @FindBy(xpath = "//span[text()='Gift Cards']")
     WebElement giftCards;
     //CART
-    By closeOverlay = By.cssSelector("span.icon-close");
     By openedCart = By.xpath("//div[@class='minicart']");
     //MOBILE
     By cartMobile = By.cssSelector("span.header__count");
@@ -40,23 +39,11 @@ public class hoytsShopAbstractComponents {
 
     public boolean isMobileView() {
         try {
+        	Thread.sleep(1500);
             return driver.findElement(hamburgerMenu).isDisplayed();
         } catch (Exception e) {
             return false;
-        }
-    }
-    
-    // ================= OVERLAY =================
-    
-    public void closeOverlayIfPresent() {
-        try {
-            WebElement closeBtn = waitForElementToBeClickable(closeOverlay);
-            closeBtn.click();
-
-            waitForElementToBeInvisible(closeOverlay);
-
-        } catch (Exception e) {
-        }
+        } 
     }
     
     // ================= GO TO GIFTCARDS PAGE =================
@@ -80,7 +67,6 @@ public class hoytsShopAbstractComponents {
     
     // ================= CONFIRM GIFTCARD =================
     public String confirmGiftCard(String title) {
-    	closeOverlayIfPresent();
     	Boolean isMobile = isMobileView();
     	By cartButton = isMobile ? cartMobile : cartDesktop;
     	waitForElementToBeClickable(cartButton);
