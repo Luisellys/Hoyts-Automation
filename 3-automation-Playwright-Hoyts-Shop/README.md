@@ -1,9 +1,10 @@
+```md
 # Hoyts QA Automation - Playwright + TypeScript
 
 This project contains automated UI tests for:
 https://shop.hoyts.com.au/
-Built using Playwright, TypeScript, and Visual Studio Code
-
+Built using **Playwright**, **TypeScript**, and **Visual Studio Code**
+```
 ---
 ## Prerequisites (Clean Machine Setup)
 Install the following tools:
@@ -46,8 +47,11 @@ Playwright will be installed as part of the project setup.
 ---
 ## Project Setup
 - **Clone the repository:**
+``` bash
 git clone https://github.com/Luisellys/Hoyts-Automation.git
 cd 3-automation-Playwright-Hoyts-Shop
+```
+
 - **Import to VSCode:** 
 1.  Open Visual Studio Code
 2.  Click on "File"
@@ -94,7 +98,7 @@ npx playwright install
 - Native `<select>` (mobile devices)
   
 **Responsive Handling**
-- Introduced: `hasHamburgerMenu()`  
+- Introduced utility: `hasHamburgerMenu()`  
   *Based on viewport width (≤ 1278)*
   
 **Scrolling Strategy**
@@ -149,4 +153,10 @@ npx playwright test --project="Mobile Safari" --headed
 npx playwright test --project="Google Chrome" --headed
 npx playwright test --project="Microsoft Edge" --headed
 ```
-
+```md
+### View Test Report
+After running tests, open the HTML report:
+```
+```bash
+npx playwright show-report
+```
