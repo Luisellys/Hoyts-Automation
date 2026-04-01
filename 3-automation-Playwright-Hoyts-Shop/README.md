@@ -25,8 +25,6 @@ Open Command Prompt:
 1. Press Windows + R
 2. Type: cmd
 3. Press Enter
-```markdown
-```
 4. Run:
 
 ```bash
@@ -57,8 +55,15 @@ cd 3-automation-Playwright-Hoyts-Shop
 - **Install Node.js dependencies** *(Open a terminal inside VS Code)*
 1. Click on "View"
 2. Click on "Terminal" (or press Ctrl + `) *(Terminal path should match your project folder)*
-3. Install @playwright/test and any other library the project uses, **Run:** npm install
-4. Install Playwright browsers, **Run:** npx playwright install
+3. Install @playwright/test and any other library the project uses, **Run:**
+```bash
+npm install
+ ```
+4. Install Playwright browsers, **Run:**
+```bash
+npx playwright install
+```
+
 ---
 ## Test Scenarios Covered
 ### Pick Most Popular Gift Card (Home Page)
