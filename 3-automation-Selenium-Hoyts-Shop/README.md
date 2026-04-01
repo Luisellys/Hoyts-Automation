@@ -30,7 +30,10 @@ Open Command Prompt:
 1. Press Windows + R
 2. Type: cmd
 3. Press Enter
-4. Run: java -version
+4. Run:
+```bash
+   java -version
+```
 - You should see something like: java version "11.x.x"
 
 ### 2. Eclipse
@@ -46,8 +49,10 @@ Download: https://www.google.com/chrome/
 
 ##  Project Setup
 - **Clone the repository:**
+```bash
 git clone https://github.com/Luisellys/Hoyts-Automation.git
 cd 3-automation-Selenium-Hoyts-Shops
+```
 
 - **Import to Eclipse:** 
 1. Click on "File"
