@@ -74,31 +74,17 @@ cd 3-automation-Playwright-Hoyts-Shop
 *Separation of concerns:*
 - mainPageHoytsShop
 - giftCardsPageHoytsShop
-- abstractComponentsHoytsShop
----  
+- abstractComponentsHoytsShop 
 **Cross-Device Strategy**  
 *Desktop vs Mobile handled dynamically:*
-
 - Custom dropdown (desktop)
 - Native `<select>` (mobile devices)
-
----
-
 **Responsive Handling**
-
 - Introduced: `hasHamburgerMenu()`  
   *Based on viewport width (≤ 1278)*
-
----
-
 **Scrolling Strategy**
-
 - Stable scrolling using: `window.scrollBy()`
-
----
-
 **Works across:**
-
 - Desktop browsers
 - Mobile emulation
 - Real device behavior
@@ -122,13 +108,13 @@ npx playwright test
 
 ### Run specific project
 
-**Desktop Browsers (headed/see browser)**
+Desktop Browsers (headed/see browser)
 
 npx playwright test --project=chromium --headed
 npx playwright test --project=firefox --headed
 npx playwright test --project=webkit --headed
 
-**Small Window (Responsive UI)**
+Small Window (Responsive UI)
 
 npx playwright test --project=chromium-smallWindow --headed
 npx playwright test --project=firefox-smallWindow --headed
@@ -136,12 +122,12 @@ npx playwright test --project=webkit-smallWindow --headed
 npx playwright test --project="Google Chrome-smallWindow" --headed
 npx playwright test --project="Microsoft Edge-smallWindow" --headed
 
-**Mobile Devices**
+Mobile Devices
 
 npx playwright test --project="Mobile Chrome" --headed
 npx playwright test --project="Mobile Safari" --headed
 
-**Branded Browsers**
+Branded Browsers
 
 npx playwright test --project="Google Chrome" --headed
 npx playwright test --project="Microsoft Edge" --headed
