@@ -4,6 +4,7 @@ This project contains automated UI tests for:
 https://shop.hoyts.com.au/
 Built using Playwright, TypeScript, and Visual Studio Code
 
+---
 ## Prerequisites (Clean Machine Setup)
 Install the following tools:
 ### 1. Node.js (v18 or higher recommended)
@@ -37,6 +38,7 @@ Recommended extensions: Playwright Test for VSCode
 ### 3. Playwright (installed via project)
 Playwright will be installed as part of the project setup.
 
+---
 ## Project Setup
 - **Clone the repository:**
 git clone https://github.com/Luisellys/Hoyts-Automation.git
@@ -52,7 +54,7 @@ cd 3-automation-Playwright-Hoyts-Shop
 2. Click on "Terminal" (or press Ctrl + `) *(Terminal path should match your project folder)*
 3. Install @playwright/test and any other library the project uses, **Run:** npm install
 4. Install Playwright browsers, **Run:** npx playwright install
-
+---
 ## Test Scenarios Covered
 ### Pick Most Popular Gift Card (Home Page)
 - Select "Easter E-Gift Card"
@@ -65,7 +67,7 @@ cd 3-automation-Playwright-Hoyts-Shop
 - Select value (e.g. $80)
 - Add to cart
 - Validate item is present in cart
-
+---
 ##  Framework Design Decisions
 **Playwright Test Runner** Built-in test runner (no external framework needed)
 **Page Object Model (POM)**
@@ -73,7 +75,7 @@ cd 3-automation-Playwright-Hoyts-Shop
 - mainPageHoytsShop
 - giftCardsPageHoytsShop
 - abstractComponentsHoytsShop
-  
+---  
 **Cross-Device Strategy**  
 *Desktop vs Mobile handled dynamically:*
 
@@ -121,13 +123,13 @@ npx playwright test
 ### Run specific project
 
 **Desktop Browsers (headed/see browser)**
-```bash
+
 npx playwright test --project=chromium --headed
 npx playwright test --project=firefox --headed
 npx playwright test --project=webkit --headed
 
 **Small Window (Responsive UI)**
-```bash
+
 npx playwright test --project=chromium-smallWindow --headed
 npx playwright test --project=firefox-smallWindow --headed
 npx playwright test --project=webkit-smallWindow --headed
@@ -135,12 +137,12 @@ npx playwright test --project="Google Chrome-smallWindow" --headed
 npx playwright test --project="Microsoft Edge-smallWindow" --headed
 
 **Mobile Devices**
-```bash
+
 npx playwright test --project="Mobile Chrome" --headed
 npx playwright test --project="Mobile Safari" --headed
 
 **Branded Browsers**
-```bash
+
 npx playwright test --project="Google Chrome" --headed
 npx playwright test --project="Microsoft Edge" --headed
 
