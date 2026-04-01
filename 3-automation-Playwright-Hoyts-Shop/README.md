@@ -1,4 +1,4 @@
-```md
+```Markdown
 # Hoyts QA Automation - Playwright + TypeScript
 
 This project contains automated UI tests for:
