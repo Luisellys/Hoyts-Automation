@@ -74,18 +74,26 @@ cd 3-automation-Playwright-Hoyts-Shop
 - giftCardsPageHoytsShop
 - abstractComponentsHoytsShop
   
-**Cross-Device Strategy**
+**Cross-Device Strategy**  
 *Desktop vs Mobile handled dynamically:*
+
 - Custom dropdown (desktop)
-- Native <select> (mobile devices)
-  
+- Native `<select>` (mobile devices)
+
+---
+
 **Responsive Handling**
 
-- Introduced: hasHamburgerMenu() *Based on viewport width (≤ 1278)*
-  
-**Scrolling Strategy** 
+- Introduced: `hasHamburgerMenu()`  
+  *Based on viewport width (≤ 1278)*
 
-With stable: window.scrollBy()
+---
+
+**Scrolling Strategy**
+
+- Stable scrolling using: `window.scrollBy()`
+
+---
 
 **Works across:**
 
@@ -93,28 +101,33 @@ With stable: window.scrollBy()
 - Mobile emulation
 - Real device behavior
 
+---
+
 ## Run on a Clean Computer (Step-by-Step)
 
 1. Install Node.js
 2. Install Visual Studio Code
 3. Clone repository
-4. Open VSCode terminal and Install Playwright and browsers
-5. Run Tests through terminal:
-   
+4. Open VSCode terminal and install Playwright and browsers
+5. Run tests through terminal
+
+---
+
 ### Run ALL projects
 
+```bash
 npx playwright test
 
 ### Run specific project
 
 **Desktop Browsers (headed/see browser)**
-
+```bash
 npx playwright test --project=chromium --headed
 npx playwright test --project=firefox --headed
 npx playwright test --project=webkit --headed
 
 **Small Window (Responsive UI)**
-
+```bash
 npx playwright test --project=chromium-smallWindow --headed
 npx playwright test --project=firefox-smallWindow --headed
 npx playwright test --project=webkit-smallWindow --headed
@@ -122,12 +135,12 @@ npx playwright test --project="Google Chrome-smallWindow" --headed
 npx playwright test --project="Microsoft Edge-smallWindow" --headed
 
 **Mobile Devices**
-
+```bash
 npx playwright test --project="Mobile Chrome" --headed
 npx playwright test --project="Mobile Safari" --headed
 
 **Branded Browsers**
-
+```bash
 npx playwright test --project="Google Chrome" --headed
 npx playwright test --project="Microsoft Edge" --headed
 
