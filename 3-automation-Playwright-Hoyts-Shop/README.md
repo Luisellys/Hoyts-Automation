@@ -73,14 +73,18 @@ cd 3-automation-Playwright-Hoyts-Shop
 - mainPageHoytsShop
 - giftCardsPageHoytsShop
 - abstractComponentsHoytsShop
+  
 **Cross-Device Strategy**
 *Desktop vs Mobile handled dynamically:*
 - Custom dropdown (desktop)
 - Native <select> (mobile devices)
+  
 **Responsive Handling**
 - Introduced:hasHamburgerMenu() *Based on viewport width (≤ 1278)*
+  
 **Scrolling Strategy** 
 With stable: window.scrollBy()
+
 **Works across:**
 - Desktop browsers
 - Mobile emulation
@@ -92,22 +96,28 @@ With stable: window.scrollBy()
 3. Clone repository
 4. Open VSCode terminal and Install Playwright and browsers
 5. Run Tests through terminal:
+   
 ### Run ALL projects
 npx playwright test
+
 ### Run specific project
+
 **Desktop Browsers (headed/see browser)**
 npx playwright test --project=chromium --headed
 npx playwright test --project=firefox --headed
 npx playwright test --project=webkit --headed
+
 **Small Window (Responsive UI)**
 npx playwright test --project=chromium-smallWindow --headed
 npx playwright test --project=firefox-smallWindow --headed
 npx playwright test --project=webkit-smallWindow --headed
 npx playwright test --project="Google Chrome-smallWindow" --headed
 npx playwright test --project="Microsoft Edge-smallWindow" --headed
+
 **Mobile Devices**
 npx playwright test --project="Mobile Chrome" --headed
 npx playwright test --project="Mobile Safari" --headed
+
 **Branded Browsers**
 npx playwright test --project="Google Chrome" --headed
 npx playwright test --project="Microsoft Edge" --headed
