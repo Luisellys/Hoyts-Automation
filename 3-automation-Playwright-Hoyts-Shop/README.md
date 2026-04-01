@@ -80,7 +80,7 @@ cd 3-automation-Playwright-Hoyts-Shop
 - Native <select> (mobile devices)
   
 **Responsive Handling**
-- Introduced:hasHamburgerMenu() *Based on viewport width (≤ 1278)*
+- Introduced: hasHamburgerMenu() *Based on viewport width (≤ 1278)*
   
 **Scrolling Strategy** 
 With stable: window.scrollBy()
