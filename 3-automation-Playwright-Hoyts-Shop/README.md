@@ -8,6 +8,7 @@ Built using **Playwright**, **TypeScript**, and **Visual Studio Code**
 ---
 ## Prerequisites (Clean Machine Setup)
 ---
+
 Install the following tools:
 ### 1. Node.js (v18 or higher recommended)
 Download: https://nodejs.org/
@@ -45,8 +46,10 @@ Recommended extensions: Playwright Test for VSCode
 ### 3. Playwright (installed via project)
 Playwright will be installed as part of the project setup.
 
+---
 ## Project Setup
 ---
+
 - **Clone the repository:**
 ``` bash
 git clone https://github.com/Luisellys/Hoyts-Automation.git
@@ -72,8 +75,10 @@ npm install
 npx playwright install
 ```
 
+---
 ## Test Scenarios Covered
 ---
+
 ### Pick Most Popular Gift Card (Home Page)
 - Select "Easter E-Gift Card"
 - Choose a value (e.g. $150)
@@ -85,9 +90,11 @@ npx playwright install
 - Select value (e.g. $80)
 - Add to cart
 - Validate item is present in cart
-  
+
+---  
 ##  Framework Design Decisions
 ---
+
 **Playwright Test Runner** Built-in test runner (no external framework needed)
 **Page Object Model (POM)**
 *Separation of concerns:*
@@ -112,6 +119,7 @@ npx playwright install
 - Mobile emulation
 - Real device behavior
 
+---
 ## Run on a Clean Computer (Step-by-Step)
 ---
 
