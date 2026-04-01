@@ -74,16 +74,20 @@ cd 3-automation-Playwright-Hoyts-Shop
 *Separation of concerns:*
 - mainPageHoytsShop
 - giftCardsPageHoytsShop
-- abstractComponentsHoytsShop 
+- abstractComponentsHoytsShop
+- 
 **Cross-Device Strategy**  
 *Desktop vs Mobile handled dynamically:*
 - Custom dropdown (desktop)
 - Native `<select>` (mobile devices)
+  
 **Responsive Handling**
 - Introduced: `hasHamburgerMenu()`  
   *Based on viewport width (≤ 1278)*
+  
 **Scrolling Strategy**
 - Stable scrolling using: `window.scrollBy()`
+  
 **Works across:**
 - Desktop browsers
 - Mobile emulation
