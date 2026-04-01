@@ -4,11 +4,8 @@ This project contains automated UI tests for:
 https://shop.hoyts.com.au/
 
 Built using **Playwright**, **TypeScript**, and **Visual Studio Code**
-
----
 ## Prerequisites (Clean Machine Setup)
 ---
-
 Install the following tools:
 ### 1. Node.js (v18 or higher recommended)
 Download: https://nodejs.org/
@@ -45,13 +42,10 @@ Recommended extensions: Playwright Test for VSCode
 
 ### 3. Playwright (installed via project)
 Playwright will be installed as part of the project setup.
-
----
 ## Project Setup
 ---
-
 - **Clone the repository:**
-``` bash
+```bash
 git clone https://github.com/Luisellys/Hoyts-Automation.git
 cd 3-automation-Playwright-Hoyts-Shop
 ```
@@ -74,11 +68,8 @@ npm install
 ```bash
 npx playwright install
 ```
-
----
 ## Test Scenarios Covered
 ---
-
 ### Pick Most Popular Gift Card (Home Page)
 - Select "Easter E-Gift Card"
 - Choose a value (e.g. $150)
@@ -90,11 +81,8 @@ npx playwright install
 - Select value (e.g. $80)
 - Add to cart
 - Validate item is present in cart
-
----  
 ##  Framework Design Decisions
 ---
-
 **Playwright Test Runner** Built-in test runner (no external framework needed)
 **Page Object Model (POM)**
 *Separation of concerns:*
@@ -118,11 +106,8 @@ npx playwright install
 - Desktop browsers
 - Mobile emulation
 - Real device behavior
-
----
 ## Run on a Clean Computer (Step-by-Step)
 ---
-
 1. Install Node.js
 2. Install Visual Studio Code
 3. Clone repository
