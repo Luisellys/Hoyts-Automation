@@ -25,10 +25,12 @@ Open Command Prompt:
 1. Press Windows + R
 2. Type: cmd
 3. Press Enter
-4. Run:
-
+4.  Verify Node.js runtime version is installed, Run:
 ```bash
 node -v
+```
+5. Verify Node Package Manager version is installed, Run:
+```bash
 npm -v
 ```
  - If you see version numbers (like v20.x.x), everything is installed correctly
