@@ -75,7 +75,7 @@ cd 3-automation-Playwright-Hoyts-Shop
 - mainPageHoytsShop
 - giftCardsPageHoytsShop
 - abstractComponentsHoytsShop
-- 
+  
 **Cross-Device Strategy**  
 *Desktop vs Mobile handled dynamically:*
 - Custom dropdown (desktop)
