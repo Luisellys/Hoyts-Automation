@@ -154,8 +154,6 @@ npx playwright test --project="Google Chrome" --headed
 npx playwright test --project="Microsoft Edge" --headed
 ```
 
-```md
-```
 ### View Test Report
 After running tests, open the HTML report:
 
