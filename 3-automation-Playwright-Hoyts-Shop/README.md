@@ -6,26 +6,6 @@ https://shop.hoyts.com.au/
 Built using **Playwright**, **TypeScript**, and **Visual Studio Code**
 
 ---
-## Table of Contents
-- [Prerequisites (Clean Machine Setup)](#prerequisites-clean-machine-setup)
-  - [1. Node.js](#1-nodejs-v18-or-higher-recommended)
-  - [2. Visual Studio Code](#2-visual-studio-code)
-  - [3. Playwright](#3-playwright-installed-via-project)
-- [Project Setup](#project-setup)
-- [Test Scenarios Covered](#test-scenarios-covered)
-  - [Pick Most Popular Gift Card (Home Page)](#pick-most-popular-gift-card-home-page)
-  - [Pick Gift Card from Gift Cards Page](#pick-gift-card-from-gift-cards-page)
-- [Framework Design Decisions](#framework-design-decisions)
-- [Run on a Clean Computer (Step-by-Step)](#run-on-a-clean-computer-step-by-step)
-  - [Run ALL projects](#run-all-projects)
-  - [Run specific project](#run-specific-project)
-    - [Desktop Browsers (headed/see browser)](#desktop-browsers-headedsee-browser)
-    - [Small Window (Responsive UI)](#small-window-responsive-ui)
-    - [Mobile Devices](#mobile-devices)
-    - [Branded Browsers](#branded-browsers)
-  - [View Test Report](#view-test-report)
-
----
 ## Prerequisites (Clean Machine Setup)
 Install the following tools:
 ### 1. Node.js (v18 or higher recommended)
