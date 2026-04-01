@@ -25,9 +25,13 @@ Open Command Prompt:
 1. Press Windows + R
 2. Type: cmd
 3. Press Enter
+```markdown
 4. Run:
+
+```bash
 node -v
 npm -v
+```
  - If you see version numbers (like v20.x.x), everything is installed correctly
  - If you get “not recognized,” Node.js is not installed
 
@@ -136,4 +140,4 @@ Branded Browsers
 npx playwright test --project="Google Chrome" --headed
 npx playwright test --project="Microsoft Edge" --headed
 
-
+```
