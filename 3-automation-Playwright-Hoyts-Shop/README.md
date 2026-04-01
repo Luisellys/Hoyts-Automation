@@ -80,17 +80,21 @@ cd 3-automation-Playwright-Hoyts-Shop
 - Native <select> (mobile devices)
   
 **Responsive Handling**
+
 - Introduced: hasHamburgerMenu() *Based on viewport width (≤ 1278)*
   
 **Scrolling Strategy** 
+
 With stable: window.scrollBy()
 
 **Works across:**
+
 - Desktop browsers
 - Mobile emulation
 - Real device behavior
 
 ## Run on a Clean Computer (Step-by-Step)
+
 1. Install Node.js
 2. Install Visual Studio Code
 3. Clone repository
@@ -98,16 +102,19 @@ With stable: window.scrollBy()
 5. Run Tests through terminal:
    
 ### Run ALL projects
+
 npx playwright test
 
 ### Run specific project
 
 **Desktop Browsers (headed/see browser)**
+
 npx playwright test --project=chromium --headed
 npx playwright test --project=firefox --headed
 npx playwright test --project=webkit --headed
 
 **Small Window (Responsive UI)**
+
 npx playwright test --project=chromium-smallWindow --headed
 npx playwright test --project=firefox-smallWindow --headed
 npx playwright test --project=webkit-smallWindow --headed
@@ -115,10 +122,12 @@ npx playwright test --project="Google Chrome-smallWindow" --headed
 npx playwright test --project="Microsoft Edge-smallWindow" --headed
 
 **Mobile Devices**
+
 npx playwright test --project="Mobile Chrome" --headed
 npx playwright test --project="Mobile Safari" --headed
 
 **Branded Browsers**
+
 npx playwright test --project="Google Chrome" --headed
 npx playwright test --project="Microsoft Edge" --headed
 
