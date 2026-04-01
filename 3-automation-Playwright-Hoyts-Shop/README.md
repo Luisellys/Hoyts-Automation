@@ -1,10 +1,9 @@
-```Markdown
 # Hoyts QA Automation - Playwright + TypeScript
 
 This project contains automated UI tests for:
 https://shop.hoyts.com.au/
 Built using **Playwright**, **TypeScript**, and **Visual Studio Code**
-```
+
 ---
 ## Prerequisites (Clean Machine Setup)
 Install the following tools:
