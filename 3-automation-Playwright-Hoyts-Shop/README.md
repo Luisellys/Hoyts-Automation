@@ -10,7 +10,7 @@ Install the following tools:
 ### 1. Node.js (v18 or higher recommended)
 Download: https://nodejs.org/
 - **Set Environment Variables (Windows)**
-After installing Java:
+After installing Node.js:
 1. Open Start Menu
 2. Search: "Environment Variables"
 3. Click: "Edit the system environment variables"
