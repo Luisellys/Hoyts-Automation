@@ -157,3 +157,4 @@ After running tests, open the HTML report:
 ```bash
 npx playwright show-report
 ```
+
