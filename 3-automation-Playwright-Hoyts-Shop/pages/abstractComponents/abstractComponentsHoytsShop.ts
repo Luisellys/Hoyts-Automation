@@ -7,7 +7,7 @@ export class abstractComponentsHoytsShop {
         this.page = page;
     }
 
-    // ============================== Locators ==========================
+    // ====================== Locators ========================
     hamburgerMenu: string = 'span.icon-menu';
     openedMenu: string = 'nav.header__nav';
     giftCards: string = '//span[normalize-space() = "Gift Cards"]';
@@ -15,16 +15,45 @@ export class abstractComponentsHoytsShop {
     cartDesktop: string = 'button.header__cart-btn';
     openedCart: string = 'div.minicart';
 
-    // ========================= Helpers =======================
+    // =================== Locator Helpers =====================
+    // == Product Container ====================================
+    protected productContainer(title: string){
+        return this.page.locator(`//main[@id='MainContent']//div[contains(@class,'product-item') 
+        and .//a[contains(@title,'${title}')]]`).first();
+    }
+
+    // == Selectors ============================================
+    protected dropdownSelector(container: Locator){
+        return container.locator('div[data-label="Value:"]');
+    }
+
+    protected giftCardAmountSelector(container: Locator, value: string){
+        return container.locator(
+            'ul[class*="options"] >> li[class*="option"]',
+            { hasText: `$${value}` }
+        );
+    }
+
+    protected addToCartButtonSelector(container: Locator){
+        return container.locator('button[type="submit"]');
+    }
+    // ====================== Utilities ========================
+    // == Viewport Detection ===================================
+    async hasHamburgerMenu(): Promise<boolean>{
+        const viewportWidth = await this.page.evaluate(() => window.innerWidth);
+        console.log('Viewport Width: ', viewportWidth);
+        return viewportWidth <= 1278;
+    }
+
     // == Safe Click ===========================================
     protected async safeClick(locator: Locator) {
         await locator.waitFor({ state: 'visible', timeout: 15000 });
 
         try {
-            await locator.click({ timeout: 5000 });
+            await locator.click({ timeout: 15000 });
         } catch {
             await locator.evaluate(el => el.scrollIntoView({ block: 'center' }));
-            await locator.click({ timeout: 5000 });
+            await locator.click({ timeout: 15000 });
         }
     }
     // == Scrolling ==============================================
@@ -45,14 +74,9 @@ export class abstractComponentsHoytsShop {
     throw new Error(`Gift Card: '${title}' not available`);
     }
 
-    // ========================= Viewport Detection =======================
-    async hasHamburgerMenu(): Promise<boolean>{
-        const viewportWidth = await this.page.evaluate(() => window.innerWidth);
-        console.log('Viewport Width: ', viewportWidth);
-        return viewportWidth <= 1278;
-    }
+    // ========================= Action Methods =======================
 
-    // ========================= Go to GiftCards Page =======================
+    // == Go to GiftCards Page ========================================
     async goToGiftCards(){
         if (await this.hasHamburgerMenu()) {
             try {
@@ -74,29 +98,7 @@ export class abstractComponentsHoytsShop {
         await this.page.evaluate(() => window.scrollBy(0, 100));
     }
 
-    // ========================= Product Container =======================
-    protected productContainer(title: string){
-        return this.page.locator(`//main[@id='MainContent']//div[contains(@class,'product-item') 
-        and .//a[contains(@title,'${title}')]]`).first();
-    }
-
-    // ========================= Locator Helpers =======================
-    protected dropdownSelector(container: Locator){
-        return container.locator('div[data-label="Value:"]');
-    }
-
-    protected giftCardAmountSelector(container: Locator, value: string){
-        return container.locator(
-            'ul[class*="options"] >> li[class*="option"]',
-            { hasText: `$${value}` }
-        );
-    }
-
-    protected addToCartButtonSelector(container: Locator){
-        return container.locator('button[type="submit"]');
-    }
-
-    // ========================= Select Gift Cards =======================
+    // == Select Gift Cards ==============================================
     async selectGiftCard(container: Locator, value: string) {
 
         await container.scrollIntoViewIfNeeded({timeout: 15000});
@@ -114,16 +116,14 @@ export class abstractComponentsHoytsShop {
             await this.safeClick(dropdown);
 
             const amount = this.giftCardAmountSelector(container, value);
-            await amount.waitFor({ state: 'visible', timeout: 15000 });
-
-            await amount.click();
+            await this.safeClick(amount);
         }
 
         const cart = this.addToCartButtonSelector(container);
         await this.safeClick(cart);
     }
 
-    // ========================= Confirm GiftCard =======================
+    // == Confirm GiftCard ==============================================
     async confirmGiftCard(title: string): Promise<string | null>{
 
         const hasHamburgerMenu = await this.hasHamburgerMenu();
