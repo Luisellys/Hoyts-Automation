@@ -50,10 +50,10 @@ export class abstractComponentsHoytsShop {
         await locator.waitFor({ state: 'visible', timeout: 15000 });
 
         try {
-            await locator.click({ timeout: 15000 });
+            await locator.click({ timeout: 5000 });
         } catch {
             await locator.evaluate(el => el.scrollIntoView({ block: 'center' }));
-            await locator.click({ timeout: 15000 });
+            await locator.click({ timeout: 10000 });
         }
     }
     // == Scrolling ==============================================
