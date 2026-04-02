@@ -7,11 +7,12 @@ export class mainPageHoytsShop extends abstractComponentsHoytsShop {
     }
     // ========================= Go to URL =======================
     async goTo(){
-        await this.page.goto('https://shop.hoyts.com.au/');
+        await this.page.goto('https://shop.hoyts.com.au/', {waitUntil: "load", timeout: 60000});
     }
 
     // ========================= Pick Most Popular Gift Cards =======================
     async pickMostPopularGiftCard( title: string, value: string){
+        await this.page.evaluate(()=>window.scrollBy(0,100));
         const container = this.productContainer(title);
         if(await container.count() ===0){
             throw new Error (`Gift Card '${title}' not found in the most popular gift cards`);

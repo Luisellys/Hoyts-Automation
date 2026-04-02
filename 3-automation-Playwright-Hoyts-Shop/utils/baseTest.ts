@@ -15,6 +15,7 @@ export const test = base.extend<TestFixtures>({
   },
   page: async ({ context }, use) => {
     const page = await context.newPage();
+    page.setDefaultNavigationTimeout(6000);
     await use(page);
   },
   mainPage: async ({ page }, use) => {
@@ -23,3 +24,5 @@ export const test = base.extend<TestFixtures>({
     await use(mainPage);
   }
 });
+// Set default timeout for **all** tests using this `test` object
+test.setTimeout(90000); // 90 seconds
