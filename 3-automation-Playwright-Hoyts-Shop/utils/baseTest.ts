@@ -25,4 +25,4 @@ export const test = base.extend<TestFixtures>({
   }
 });
 // Set default timeout for **all** tests using this `test` object
-test.setTimeout(30000); // 60 seconds
+test.setTimeout(30000); // 30 seconds
