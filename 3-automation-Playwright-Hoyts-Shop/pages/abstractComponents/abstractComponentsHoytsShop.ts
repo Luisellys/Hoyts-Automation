@@ -53,7 +53,7 @@ export class abstractComponentsHoytsShop {
             await locator.click({ timeout: 5000 });
         } catch {
             await locator.evaluate(el => el.scrollIntoView({ block: 'center' }));
-            await locator.click({ timeout: 10000 });
+            await locator.click({ timeout: 5000 });
         }
     }
     // == Scrolling ==============================================
@@ -101,13 +101,8 @@ export class abstractComponentsHoytsShop {
     // == Select Gift Cards ==============================================
     async selectGiftCard(container: Locator, value: string) {
 
-        await container.scrollIntoViewIfNeeded({timeout: 15000});
-
         if (await container.locator('select.select').isVisible()) {
-
             const select = container.locator('select.select');
-            await select.waitFor({ state: 'attached' });
-
             await select.selectOption({ value: `$${value}|1` });
 
         } else {
