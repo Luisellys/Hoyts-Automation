@@ -7,7 +7,6 @@
         <methods>
           <include name="tearDown"/>
           <include name="pickMostPopularGiftCardFromMainPage"/>
-          <include name="pickFromGiftCardsPage"/>
           <include name="launchApplication"/>
         </methods>
       </class> <!-- QA_Assessment.hoyts_qa_test.giftCardTests -->

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,13 +14,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import hoytsShopPageObjects.hoytsShopMainPage;
+import hoytsShopPageObjects.mainPageHoytsShop;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class hoytsShopBaseTest {
 
     public WebDriver driver;
-    public hoytsShopMainPage mainPage;
+    public mainPageHoytsShop mainPage;
     public Properties prop;
     
 
@@ -46,15 +47,19 @@ public class hoytsShopBaseTest {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize(); 
+        //Mobile Chrome/ Pixel 5 Viewport Width:  393
+        //driver.manage().window().setSize(new Dimension(393, 851));
+        //Mobile Safari / iPhone 12 - Viewport Width:  390
+        //driver.manage().window().setSize(new Dimension(390, 844));
 
         return driver;
     }
 
     @BeforeMethod
-    public hoytsShopMainPage launchApplication() throws IOException {
+    public mainPageHoytsShop launchApplication() throws IOException {
         driver = initializedDriver();
         driver.manage().deleteAllCookies();
-        mainPage = new hoytsShopMainPage(driver);
+        mainPage = new mainPageHoytsShop(driver);
         mainPage.goTo();
         return mainPage;
     }

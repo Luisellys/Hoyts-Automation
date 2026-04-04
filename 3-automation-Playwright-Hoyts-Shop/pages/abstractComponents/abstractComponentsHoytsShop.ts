@@ -89,11 +89,11 @@ export class abstractComponentsHoytsShop {
 
         await this.page.waitForURL('**/collections/gift-cards', {
             waitUntil: 'load',
-            timeout: 30000
+            timeout: 15000
         });
 
         const firstProduct = this.page.locator('div.product-item').first();
-        await firstProduct.waitFor({ state: "visible", timeout: 30000 });
+        await firstProduct.waitFor({ state: "visible", timeout: 5000 });
 
         await this.page.evaluate(() => window.scrollBy(0, 100));
     }
