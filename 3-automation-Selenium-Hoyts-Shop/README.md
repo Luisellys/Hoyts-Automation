@@ -31,6 +31,7 @@ Open Command Prompt:
 2. Type: cmd
 3. Press Enter
 4. Run:
+
 ```bash
    java -version
 ```
@@ -45,10 +46,12 @@ From Eclipse Market place:
 3. Search: "TestNG"
 4. Click on "Install" 
 ### 4. Google Chrome Browser
+
 Download: https://www.google.com/chrome/
 
 ##  Project Setup
 - **Clone the repository:**
+
 ```bash
 git clone https://github.com/Luisellys/Hoyts-Automation.git
 cd 3-automation-Selenium-Hoyts-Shops
@@ -71,6 +74,7 @@ cd 3-automation-Selenium-Hoyts-Shops
 ### Pick a Most Popular Gift Card From Home page
 - Search for "Easter E-Gift Card" $50 gift card
 - Validate gift card is added to the cart
+
 ### Pick a Gift Card From Gift Cards page
 - Search for "Birthday E-Gift Card" $250 gift card
 - Validate gift card is added to the cart
