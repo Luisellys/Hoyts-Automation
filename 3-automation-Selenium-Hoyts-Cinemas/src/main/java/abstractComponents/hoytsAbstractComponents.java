@@ -37,7 +37,7 @@ public class hoytsAbstractComponents {
 
     // ================= VIEW DETECTION =================
 
-    public boolean isMobileView() {
+    public boolean hasHamburgerMenu() {
         int viewportWidth = ((Long)((JavascriptExecutor)driver)
                                 .executeScript("return window.innerWidth;"))
                                 .intValue();
@@ -49,14 +49,14 @@ public class hoytsAbstractComponents {
     // ================= SEARCH =================
     public void searchMovie(String movieName) {
 
-        boolean isMobile = isMobileView();
+        boolean burgerMenu = hasHamburgerMenu();
         By searchField;
 
-        if (isMobile) {
+        if (burgerMenu) {
             System.out.println("Using MOBILE search");
             // Open hamburger menu every time
             try {
-                driver.findElement(hamburgerMenu).click();
+            	waitForElementToBeVisible(hamburgerMenu).click();
                 waitForElementToBeVisible(openedMenu);
             } catch (Exception ignored) {}
 
@@ -71,13 +71,14 @@ public class hoytsAbstractComponents {
             searchField = searchButtonDesktop;
 
             try {
-                driver.findElement(searchField).click();
-            } catch (Exception ignored) {}
-
+            	waitForElementToBeVisible(searchField).click();
+            } catch (Exception e) {
+            	System.out.println("Search click failed:" + e.getMessage());
+            }
             waitForElementToBeVisible(searchField);
         }
 
-        WebElement element = driver.findElement(searchField);
+        WebElement element = waitForElementToBeVisible(searchField);
         //Perform Search
         element.clear();
         element.sendKeys(movieName);
@@ -87,12 +88,12 @@ public class hoytsAbstractComponents {
 
     public Boolean confirmMovie(String movieName) {
 
-        boolean isMobile = isMobileView();
+        boolean hasHamburgerMenu = hasHamburgerMenu();
         String searchText = movieName.toLowerCase();
 
-        By resultsLocator = isMobile ? mobileResults : desktopResults;
-        By titleLocator = isMobile ? mobileTitle : desktopTitle;
-        By descLocator = isMobile ? mobileDescription : desktopDescription;
+        By resultsLocator = hasHamburgerMenu? mobileResults : desktopResults;
+        By titleLocator = hasHamburgerMenu ? mobileTitle : desktopTitle;
+        By descLocator = hasHamburgerMenu ? mobileDescription : desktopDescription;
 
         waitForElementToBeVisible(resultsLocator);
 
@@ -113,7 +114,7 @@ public class hoytsAbstractComponents {
 
     public String confirmNoResultsMessage() {
 
-        By messageLocator = isMobileView()
+        By messageLocator = hasHamburgerMenu()
                 ? mobileNoResultsMessage
                 : desktopNoResultsMessage;
 
@@ -124,16 +125,10 @@ public class hoytsAbstractComponents {
 
     // ================= WAITS =================
 
-    public By waitForElementToAppear(By locator) {
-        new WebDriverWait(driver, Duration.ofSeconds(3))
-                .until(ExpectedConditions.visibilityOfElementLocated(locator));
-        return locator;
-    }
-
-    public By waitForElementToBeVisible(By messageLocator) {
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+    public WebElement waitForElementToBeVisible(By messageLocator) {
+        return new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(messageLocator));
-        return messageLocator;
+       
     }
 
 

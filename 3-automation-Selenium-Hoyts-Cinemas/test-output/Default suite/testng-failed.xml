@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="QA_Assessment.hoyts_qa_test.searchMovie">
+      <class name="hoytsQaTest.searchMovie">
         <methods>
           <include name="searchInvalidMovieTest"/>
           <include name="tearDown"/>
           <include name="launchApplication"/>
         </methods>
-      </class> <!-- QA_Assessment.hoyts_qa_test.searchMovie -->
+      </class> <!-- hoytsQaTest.searchMovie -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

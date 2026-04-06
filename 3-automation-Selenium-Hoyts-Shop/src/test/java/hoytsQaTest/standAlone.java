@@ -1,4 +1,4 @@
-package QA_Assessment.hoyts_qa_test;
+package hoytsQaTest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
