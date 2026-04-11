@@ -103,7 +103,7 @@ public class hoytsAbstractComponents {
             return false;
         }
 
-        return results.stream().anyMatch(movie -> {
+        return results.stream().allMatch(movie -> {
             String title = movie.findElement(titleLocator).getText().toLowerCase();
             String desc = movie.findElement(descLocator).getText().toLowerCase();
 

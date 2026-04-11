@@ -1,6 +1,7 @@
 import { Page, Locator, expect} from "@playwright/test";
 export class abstractComponentsHoytsCinemas {
     readonly page: Page;
+    private mobileView?: boolean;
     constructor(page: Page){
         this.page = page;
     }
@@ -23,9 +24,14 @@ noResultsMessageMobile: string = '.dash__search-heading';
 // ============================ Utilities =========================
 // == Viewport Detection ==========================================
 async hasHamburgerMenu(): Promise<boolean>{
-    const viewportWidth = await this.page.evaluate(() => window.innerWidth);
-    console.log('Viewport Width: ', viewportWidth);
-    return viewportWidth <= 1240;
+
+    if(this.mobileView === undefined){
+        const viewportWidth = await this.page.evaluate(() => window.innerWidth);
+        console.log('Viewport Width: ', viewportWidth);
+        this.mobileView = viewportWidth <= 1240
+    }
+    return this.mobileView ;
+
     }
 
 // ========================= Action Methods =======================
@@ -36,42 +42,54 @@ async searchMovie(movieName: string){
 
     if(await this.hasHamburgerMenu()){
         try{
-            await this.page.locator(this.hamburgerMenu).waitFor({state : "visible", timeout : 10000});
+            await this.page.locator(this.hamburgerMenu).waitFor({state : "visible"});
             await this.page.locator(this.hamburgerMenu).click();
-            await this.page.locator(this.openedMenu).waitFor({state : "visible", timeout : 10000});
+            await this.page.locator(this.openedMenu).waitFor({state : "visible"});
         } catch(exeption){}
-        search = this.page.locator(this.searchbarMobile);    
+        search = this.page.locator(this.searchbarMobile);
+        await search.waitFor({state : 'visible'});
+    
 
     } else{
         search = this.page.locator(this.searchbarDesktop);
-        await search.waitFor({ state: "visible" });
-        await search.click();
+        await search.waitFor({ state: "visible"});
+
     }
-    await search.type(movieName, {delay : 400});
+    const isMobile = await this.hasHamburgerMenu();
+    const results = isMobile? this.resultsMobile : this.resultsDesktop;
+    await search.type(movieName, {delay : 700});
     await search.press('Enter');
 }
 
 // == Confirm Movie ================================================
-async confirmMovie(movieName: string):Promise<boolean>{
-    const searchText = movieName.toLowerCase();
-    const hasHamburgerMenu = await this.hasHamburgerMenu();
-    const results = hasHamburgerMenu? this.resultsMobile : this.resultsDesktop;
-    const title = hasHamburgerMenu? this.resultTitleMobile : this.resultTitleDesktop;
-    const description = hasHamburgerMenu? this.resultDescriptionMobile : this.resultDescriptionDesktop;
+async confirmMovie(movieName: string):Promise<number>{
+    const isMobile = await this.hasHamburgerMenu();
+    const results = isMobile? this.resultsMobile : this.resultsDesktop;
+    const title = isMobile? this.resultTitleMobile : this.resultTitleDesktop;
+    const description = isMobile? this.resultDescriptionMobile : this.resultDescriptionDesktop;
 
     const movies = this.page.locator(results);
-    await movies.first().waitFor({ state: "visible" }).catch(() => {});
-
+    await expect.poll(async () => movies.count()).toBeGreaterThan(0);
     const count = await movies.count();
-    if (count === 0) return false;
 
-    const titles = await movies.locator(title).allTextContents();
-    const desc = await movies.locator(description).allTextContents();
+    let failed = 0;
+    const search = movieName.toLowerCase();
 
-    const movieResults =[...titles, ...desc];
+    for(let i=0; i<count; i++){
+        const movie = movies.nth(i);
+        const titleText = (await movie.locator(title).textContent() ?? '').toLowerCase(); 
+        const descText = (await movie.locator(description).textContent() ?? '').toLowerCase();
 
-    return movieResults.map(text => text.toLowerCase()).some(text => text.includes(searchText));
+        const match = titleText.includes(search) ||
+        descText.includes(search);
 
+        console.log(`Result ${i + 1}: ${match ? 'matches' : 'does not match'}`);
+
+        if(!match) failed++;        
+    }
+    console.log(`${count - failed} matches out of: ${count} - ${failed} mismatches`);
+
+    return failed;
 }
 
 // == Confirm No Results Message ===================================
@@ -79,8 +97,8 @@ async confirmNoResults(): Promise<string>{
     const hasHamburgerMenu = await this.hasHamburgerMenu();
     const message = hasHamburgerMenu? this.noResultsMessageMobile : this.noResultsMessageDesktop;
     const messageLocator = this.page.locator(message);
-    await messageLocator.waitFor({state : "visible", timeout : 5000});
-    const text = (await messageLocator.textContent()).trim();
+    await messageLocator.waitFor({state : "visible"});
+    const text = (await messageLocator.textContent() || '').trim();
     
     if(!text){
         throw new Error('No error message defined');
