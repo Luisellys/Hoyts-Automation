@@ -2,6 +2,7 @@ import { Page, Locator } from "@playwright/test";
 
 export class abstractComponentsHoytsShop {
     readonly page: Page;
+    private isMobile?: boolean;
 
     constructor(page: Page){
         this.page = page;
@@ -40,9 +41,14 @@ export class abstractComponentsHoytsShop {
     // ====================== Utilities ========================
     // == Viewport Detection ===================================
     async hasHamburgerMenu(): Promise<boolean>{
-        const viewportWidth = await this.page.evaluate(() => window.innerWidth);
-        console.log('Viewport Width: ', viewportWidth);
-        return viewportWidth <= 1278;
+        
+        if(this.isMobile === undefined){
+            const viewportWidth = await this.page.evaluate(() => window.innerWidth);
+            this.isMobile = viewportWidth <= 1278;
+            console.log('Viewport Width: ', viewportWidth);
+        }
+        
+        return this.isMobile;
     }
 
     // == Safe Click ===========================================
