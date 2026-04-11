@@ -51,7 +51,7 @@ export default defineConfig({
     },
     {
       name: 'chromium-smallWindow',
-      use: { ...devices['Desktop Chrome'], viewport: { width: 1277, height: 800 } },
+      use: { ...devices['Desktop Chrome'], viewport: { width: 1237, height: 800 } },
       
     },
 
