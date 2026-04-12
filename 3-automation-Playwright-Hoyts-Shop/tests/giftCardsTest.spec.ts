@@ -3,7 +3,7 @@ import { mainPageHoytsShop } from "../pages/pageObjects/mainPageHoytsShop";
 import { giftCardsPageHoytsShop } from "../pages/pageObjects/giftCardsPageHoytsShop";
 
 test('Pick Most Popular Gift Card', async({mainPage})=>{
-    const title = 'Super Mario';
+    const title = 'Michael';
     const value = '150';
     await mainPage.pickMostPopularGiftCard(title,value);
     const chosenGiftCard = await mainPage.confirmGiftCard(title);
@@ -12,7 +12,7 @@ test('Pick Most Popular Gift Card', async({mainPage})=>{
 });
 
 test('Pick from Gift Cards Page', async({mainPage, page})=>{
-    const title = 'Easter E-Gift Card';
+    const title = 'Super Mario';
     const value = '80';
     await mainPage.goToGiftCards();
     const giftCardPage = new giftCardsPageHoytsShop(page);
