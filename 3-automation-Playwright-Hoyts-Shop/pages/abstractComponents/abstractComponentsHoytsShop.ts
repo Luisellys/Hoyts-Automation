@@ -1,4 +1,4 @@
-import { Page, Locator } from "@playwright/test";
+import { Page, Locator, expect } from "@playwright/test";
 
 export class abstractComponentsHoytsShop {
     readonly page: Page;
@@ -19,8 +19,7 @@ export class abstractComponentsHoytsShop {
     // =================== Locator Helpers =====================
     // == Product Container ====================================
     protected productContainer(title: string){
-        return this.page.locator(`//main[@id='MainContent']//div[contains(@class,'product-item') 
-        and .//a[contains(@title,'${title}')]]`).first();
+        return this.page.locator('main#MainContent >> div.product-item', {has: this.page.locator(`a[title*="${title}"]`)}).first(); 
     }
 
     // == Selectors ============================================
@@ -67,8 +66,10 @@ export class abstractComponentsHoytsShop {
     const container = this.productContainer(title);
 
     for (let i = 0; i < 15; i++) {
+        const exists = await container.count()>0;
 
-        if (await container.count() > 0 && await container.isVisible()) {
+        if (exists) {
+            expect(container).toBeVisible();
             await container.scrollIntoViewIfNeeded();
             return container;
         }
@@ -117,10 +118,12 @@ export class abstractComponentsHoytsShop {
             await this.safeClick(dropdown);
 
             const amount = this.giftCardAmountSelector(container, value);
+            await amount.waitFor({state : "visible"});
             await this.safeClick(amount);
         }
 
         const cart = this.addToCartButtonSelector(container);
+        await cart.waitFor({state : "visible"});
         await this.safeClick(cart);
     }
 
