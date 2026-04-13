@@ -141,9 +141,7 @@ export class abstractComponentsHoytsShop {
             timeout: 15000
         });
 
-        const cartItem = this.page.locator(
-            `//section[contains(@class, 'minicart')] //a[contains(normalize-space(), '${title}')]`
-        );
+        const cartItem = this.page.locator('//div[@class="minicart"]//a[contains(@class, "product-item")]');
 
         await cartItem.waitFor({ state: "visible", timeout: 15000 });
 
