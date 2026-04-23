@@ -1,0 +1,22 @@
+{
+    "mostPopular":[
+        {
+            "title": "Mandalorian",
+            "value": "100"
+        },
+        {
+            "title": "Kombat",
+            "value": "50"
+        }
+    ],
+    "giftCardsPage":[
+        {
+            "title":"Super Mario",
+            "value": "30"
+        },
+        {
+            "title": "Michael",
+            "value": "250"
+        }
+    ]
+}
