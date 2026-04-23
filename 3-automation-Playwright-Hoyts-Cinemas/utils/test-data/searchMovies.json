@@ -1,0 +1,21 @@
+{
+    "validMovies":[
+        {
+            "name": "Avatar"
+        },
+        {
+            "name": "Smurfs"
+        }
+    ],
+
+    "invalidMovies": [
+        {
+            "name": "H@kun@M@t@t@",
+            "expectedMessage": "Sorry, we couldn't find any results"
+        },
+        {
+            "name": "123!@#",
+            "expectedMessage": "Sorry, we couldn't find any results"
+        }
+    ]
+}

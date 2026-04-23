@@ -1,19 +1,24 @@
 import { test, expect } from '../utils/baseTest'
 import { mainPageHoytsCinemas } from '../pages/pageObjects/mainPageHoytsCinemas'
+import testData from "../utils/test-data/searchMovies.json"
 
-test('Valid Movie', async({mainPage})=>{
-    const movie = 'Avatar';
-    await mainPage.searchMovie(movie);
-    const failed = await mainPage.confirmMovie(movie);
+testData.validMovies.forEach((data)=>{
+    test(`Valid Movie - ${data.name}`, async({mainPage})=>{
+    
+    await mainPage.searchMovie(data.name);
+    const failed = await mainPage.confirmMovie(data.name);
     expect(failed).toBe(0);
 
 })
 
-test('Invalid Movie', async({mainPage})=>{
-    const movie = 'H@kun@M@t@t@';
-    await mainPage.searchMovie(movie);
+})
+
+testData.invalidMovies.forEach((data)=> {
+    test(`Invalid Movie - ${data.name}`, async({mainPage})=>{
+    await mainPage.searchMovie(data.name);
     const confirm = await mainPage.confirmNoResults();
-    const errorMessage = "Sorry, we couldn't find any results";
-    expect(confirm).toBe(errorMessage);
+    expect(confirm).toBe(data.expectedMessage);
+
+})
 
 })
